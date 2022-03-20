@@ -5,3 +5,6 @@
 
 * 컴포넌트 스캔방식(@Component가 들어있음)과 자동 의존관계 설정
 @Controller - @Service - @Repository를 @Autowired가 연결해주는 방식
+
+*h2 접속 url
+ jdbc:h2:tcp://localhost/~/test
