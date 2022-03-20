@@ -9,12 +9,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HelloContorller {
 
+    // /hello로 들어오면 호출해줌
     @GetMapping("hello")
     public String hello(Model model) {
         model.addAttribute("data", "hello!!");
         return "hello";
     }
 
+    // /hello-mvc로 들어오면
     @GetMapping("hello-mvc")
     public String helloMvc(@RequestParam("name") String name, Model model) {
         model.addAttribute("name", name);
@@ -22,13 +24,14 @@ public class HelloContorller {
     }
 
     @GetMapping("hello-string")
-    @ResponseBody
+    @ResponseBody //html body부에 직접 리턴을 넣겠다.
     public String helloString(@RequestParam("name") String name) {
         return "hello " + name;
     }
 
     @GetMapping("hello-api")
     @ResponseBody
+    // 객체로 넘겨주면 json형식으로 넘겨준다. (key:value)
     public Hello helloApi(@RequestParam("name") String name){
         Hello hello = new Hello();
         hello.setName(name);

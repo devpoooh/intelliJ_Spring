@@ -1,0 +1,7 @@
+실행순서
+1. @Controller에서 외부 요청을 받고
+2. @Service에서 비즈니스로직을 처리하고
+3. @Repository에서 디비에 저장하고
+
+* 컴포넌트 스캔방식(@Component가 들어있음)과 자동 의존관계 설정
+@Controller - @Service - @Repository를 @Autowired가 연결해주는 방식
