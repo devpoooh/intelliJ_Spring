@@ -7,8 +7,11 @@ import hello.core.member.MemberServiceImpl;
 
 public class MemberApp {
     public static void main(String[] args) {
+        //AppConfig로 테스트하기
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService(); //appconfig의 memberService가 결정하게 한다
         //test하기에 메인을 짜는 건 귀찮고 좋은 방법도 아니다...
-        MemberService memberService = new MemberServiceImpl();
+        //MemberService memberService = new MemberServiceImpl();
 
         //회원가입하기
         Member member = new Member(1L, "meberA", Grade.VIP); //member 객체 생성
