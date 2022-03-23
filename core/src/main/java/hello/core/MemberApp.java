@@ -4,14 +4,20 @@ import hello.core.member.Grade;
 import hello.core.member.Member;
 import hello.core.member.MemberService;
 import hello.core.member.MemberServiceImpl;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class MemberApp {
     public static void main(String[] args) {
         //AppConfig로 테스트하기
-        AppConfig appConfig = new AppConfig();
-        MemberService memberService = appConfig.memberService(); //appconfig의 memberService가 결정하게 한다
-        //test하기에 메인을 짜는 건 귀찮고 좋은 방법도 아니다...
-        //MemberService memberService = new MemberServiceImpl();
+        // AppConfig appConfig = new AppConfig();
+        //MemberService memberService = appConfig.memberService(); //appconfig의 memberService가 결정하게 한다
+
+        //스프링 컨테이너 생성 -> bean 관리
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+
+        //memberService 꺼내오기 --> (이름은 클래스명이고, 반환타입은 클래스야)
+        MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
 
         //회원가입하기
         Member member = new Member(1L, "meberA", Grade.VIP); //member 객체 생성
