@@ -22,7 +22,7 @@ public class ApplicationContextExtendsFindTest {
 
     @Test
     @DisplayName("부모 타입으로 조회시 자식이 둘 이상 있으면 중복 오류 발생")
-    void findBeanByParentTypeDuplicate(){
+    void findBeanByParentTypeDuplicate() {
 //        DiscountPolicy bean = ac.getBean(DiscountPolicy.class);
 
         assertThrows(NoUniqueBeanDefinitionException.class,
@@ -31,32 +31,32 @@ public class ApplicationContextExtendsFindTest {
 
     @Test
     @DisplayName("부모 타입으로 조회시 자식이 둘 이상 있으면 빈 이름을 지정하면 된다")
-    void findBeanByParentTypeBeanName(){
+    void findBeanByParentTypeBeanName() {
         DiscountPolicy rateDiscountPolicy = ac.getBean("rateDiscountPolicy", DiscountPolicy.class);
         assertThat(rateDiscountPolicy).isInstanceOf(RateDiscountPolicy.class);
     }
 
     @Test
     @DisplayName("특정 하위 차입으로 조회(좋지않은 방법)")
-    void findBeanBySubTpe(){
+    void findBeanBySubTpe() {
         RateDiscountPolicy bean = ac.getBean(RateDiscountPolicy.class);
         assertThat(bean).isInstanceOf(RateDiscountPolicy.class);
     }
 
     @Test
     @DisplayName("부모 타입으로 모두 조회하기")
-    void findAllBeanByParentType(){
+    void findAllBeanByParentType() {
         Map<String, DiscountPolicy> beansOfType = ac.getBeansOfType(DiscountPolicy.class);//빈 타입이 DiscountPolicy인거
         assertThat(beansOfType.size()).isEqualTo(2); //2개가 있으므로 사이즈는 2여야 한다.
 
         for (String key : beansOfType.keySet()) {
-            System.out.println("key = " + key+" value = "+ beansOfType.get(key));
+            System.out.println("key = " + key + " value = " + beansOfType.get(key));
         }
     }
 
     @Test
     @DisplayName("부모 타입으로 모두 조회하기 - Object")
-    void findAllBeanByObjectType(){
+    void findAllBeanByObjectType() {
         Map<String, Object> beansOfType = ac.getBeansOfType(Object.class);//object는 가장 상위로 모든 빈(내장빈)을 출력한다.
         for (String key : beansOfType.keySet()) {
             System.out.println("key" + key + "value" + beansOfType.get(key));
@@ -64,14 +64,14 @@ public class ApplicationContextExtendsFindTest {
     }
 
     @Configuration
-    static class TestConfig{
+    static class TestConfig {
         @Bean
-        public DiscountPolicy rateDiscountPolicy(){
+        public DiscountPolicy rateDiscountPolicy() {
             return new RateDiscountPolicy();
         }
 
         @Bean
-        public DiscountPolicy fixDiscountPolicy(){
+        public DiscountPolicy fixDiscountPolicy() {
             return new FixDiscountPolicy();
         }
 

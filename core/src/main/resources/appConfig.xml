@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- id이름으로 class경로 클래스를 등록-->
+    <bean id="memberService" class="hello.core.member.MemberServiceImpl">
+        <!--해당 클래스의 생성자는 ref이다 -->
+        <constructor-arg name="memberRepository" ref="memberRepository"/>
+    </bean>
+    <!--id와 ref가 연결된 이름으로 class경로 클래스를 등록한다.-->
+    <bean id="memberRepository" class="hello.core.member.MemoryMemberRepository"/>
+
+    <bean id="orderService" class="hello.core.order.OrderServiceImpl">
+        <constructor-arg name="memberRepository" ref="memberRepository" />
+        <constructor-arg name="discountPolicy" ref="discountPolicy" />
+    </bean>
+    <bean id="discountPolicy" class="hello.core.member.discount.RateDiscountPolicy" />
+</beans>
