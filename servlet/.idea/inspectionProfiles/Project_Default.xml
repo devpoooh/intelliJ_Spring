@@ -1,0 +1,32 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="AndroidLintAdapterViewChildren" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AndroidLintAnnotateVersionCheck" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AndroidLintAppIndexingService" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AndroidLintBatteryLife" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AndroidLintBrokenIterator" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AndroidLintCustomSplashScreen" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AndroidLintFindViewByIdCast" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AndroidLintInconsistentArrays" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AndroidLintInconsistentLayout" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AndroidLintInflateParams" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AndroidLintInnerclassSeparator" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AndroidLintInstantApps" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AndroidLintJcenterRepositoryObsolete" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AndroidLintJobSchedulerService" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AndroidLintLeanbackUsesWifi" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AndroidLintLockedOrientationActivity" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AndroidLintManifestOrder" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AndroidLintNonConstantResourceId" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AndroidLintNonResizeableActivity" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AndroidLintPluralsCandidate" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AndroidLintScopedStorage" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AndroidLintSourceLockedOrientationActivity" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AndroidLintStringFormatCount" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AndroidLintUntranslatable" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AndroidLintUnusedAttribute" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AndroidLintUnusedQuantity" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AndroidLintWearStandaloneAppFlag" enabled="true" level="ERROR" enabled_by_default="true" />
+  </profile>
+</component>
