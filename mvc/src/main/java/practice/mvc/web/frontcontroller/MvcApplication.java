@@ -1,8 +1,10 @@
-package practice.mvc;
+package practice.mvc.web.frontcontroller;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 
+@ServletComponentScan
 @SpringBootApplication
 public class MvcApplication {
 
