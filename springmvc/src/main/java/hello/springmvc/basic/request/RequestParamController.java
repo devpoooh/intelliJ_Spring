@@ -1,7 +1,9 @@
 package hello.springmvc.basic.request;
 
+import hello.springmvc.basic.HelloData;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -87,6 +89,30 @@ public class RequestParamController {
     @RequestMapping("/request-param-map")
     public String requestParamMap(@RequestParam Map<String, Object> paramMap){ //파라미터를 map으로 가져온다
         log.info("username = {}, age = {}",paramMap.get("username"), paramMap.get("age"));
+
+        return "ok";
+    }
+
+    //model 데이터 저장 v1
+    @ResponseBody
+    @RequestMapping("/model-attribute-v1")
+    public String modelAttributeV1(@ModelAttribute HelloData helloData){
+        //@ModelAttribute는 helloData 객체를 생성하여 객체를 찾아 알아서 setter를 바인딩해준다.
+
+        log.info("username = {}, age = {}",helloData.getUsername(),helloData.getAge());
+        log.info("helloData = {}",helloData); //toString도 가능
+
+        return "ok";
+    }
+
+    //@ModelAttribute도 생략 가능
+    @ResponseBody
+    @RequestMapping("/model-attribute-v2")
+    public String modelAttributeV2(HelloData helloData){
+        //@ModelAttribute는 helloData 객체를 생성하여 객체를 찾아 알아서 setter를 바인딩해준다.
+
+        log.info("username = {}, age = {}",helloData.getUsername(),helloData.getAge());
+        log.info("helloData = {}",helloData); //toString도 가능
 
         return "ok";
     }
